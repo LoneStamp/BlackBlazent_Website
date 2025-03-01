@@ -17,11 +17,14 @@
          <link rel="stylesheet" href="./styles/cookies.component.css"/>
          <link rel="stylesheet" href="./styles/page.navigator.css"/>
          <link rel="stylesheet" href="./styles/share.gospel.css"/>
+         <link rel="stylesheet" href="./styles/languages.trans.css"/>
          <link rel="stylesheet" href="./styles/light.dark.mode.css"/>
          <link rel="stylesheet" href="./styles/flooting.window.css"/>
          <link rel="stylesheet" href="./styles/blackblazent.account.css"/>
          <link rel="stylesheet" href="./styles/blackbalzent.menu.css"/>
          <link rel="stylesheet" href="./styles/slogan.component.css"/>
+         <link rel="stylesheet" href="./styles/terminal.css"/>
+         <link rel="stylesheet" href="./styles/chatbot.assistant.css"/>
          <link rel="stylesheet" href="./styles/more.page.css"/>
          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
          <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
@@ -32,17 +35,20 @@
          <script src="../app/dev/modals/blackblazent.account.jsx" async></script>
          <script src="../app/dev/modals/blackblazent.menu.jsx" async></script>
          <script src="../app/dev/modals/flooting.window.jsx" async></script>
-         <script src="../app/database/services/gospel/the.gospell.js" async></script><!--Here-->
+         <script src="../app/database/services/gospel/the.gospel.js" async></script><!--Here-->
          <script src="../app/dev/global/copyright.holder.js" async></script>
          <script src="../app/dev/global/playback.bin.min.js" async></script>
          <script src="../app/dev/global/light.dark.mode.js" async></script>
          <script src="../app/dev/modals/more.page.js" async></script>
+         <script src="../app/dev/global/languages.trans.jsx" async></script>
          <script src="../app/dev/global/cookies.js" async></script>
          <script src="../app/dev/global/net.loader.jsx" async></script>
          <script src="../app/database/services/gospel/save_reflection.php" async></script>
          <script src="../app/database/server/local_server.js"></script>
-         <script src="../app/dev/main/page.navigation.js"></script>
-         <script src="./components/about.html"></script>
+         <script src="../app/dev/main/page.navigation.js" async></script>
+         <script src="../app/dev/tools/cli/chatbot.assistant.js" async></script>
+         <script src="../app/dev/global/console.mod.js" async></script>
+         <script src="../app/dev/drov/global.drv.js"></script>
         </head>
         <body>
          <div class="blackblazent-container">
@@ -57,16 +63,16 @@
             </nav>
            </div>
            <div class="header-right">
-            <button class="special-dxyz" onclick="launchDownload()">Download</button>
-            <button>
-             <i class="fas fa-globe"></i>
+            <button id="DownloadAppNow-iz" class="special-dxyz" onclick="launchDownload()">Download</button>
+            <button class="blackblazent-languages" id="choose-languages">
+             <i class="fas fa-globe" id="languages-tx"></i>
             </button>
             <button class="light&darkmode" id="theme-toggle">
                <i id="theme-icon" class="fas fa-sun"></i> <!-- Initially showing the sun icon for light mode -->
               </button>
             <button>
-             <i class="fas fa-bars" id="blackblazent-menu" id="blackblazent_menu"></i>
              <i class="fas fa-user-circle text-gray-500 blackblazent-account" id="blackblazent_establishments"></i>
+             <i class="fas fa-bars" id="blackblazent-menu" id="blackblazent_menu"></i>
             </button>
            </div>
           </header>
@@ -75,7 +81,7 @@
             <input id="" class="feeder-question" placeholder="New updates" type="text"/>
             <input id="" class="feeder-question" placeholder="Report bugs & Issues" type="text"/>
             <input id="" class="feeder-question" placeholder="Contribute" type="text"/>
-            <input id="" class="feeder-question" placeholder="Favorites" type="text"/>
+            <input id="" class="feeder-question" placeholder="Top App's" type="text"/>
             <input id="main-search-address-bar" class="ultimate-search-address" placeholder="Find's what you looking for..." type="search"/>
             <button class="search-button">
              <i class="fas fa-search blackblazent_search_engine" id="search-blackblazent"></i>
@@ -120,11 +126,11 @@
             <img class="icon-of-flooting" id="flooting-icon" src="../app/assets/icons/floot.jpg"/>
          </div>
          <div class="flooting-toolist">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+            <div class="box chatbot_drawable" id="chatbot-assistant"><i class="chatbot-agent"></i></div>
+            <div class="box console_drawable" id="console-assistant"><i class="console-agent"></i></div>
+            <div class="box"><i class=""></i></div>
+            <div class="box"><i class=""></i></div>
+            <div class="box"><i class=""></i></div>
         </div>
         <!-- Dialog/Popup More Pages -->
         <div id="morePageViewer" class="popup">
@@ -142,7 +148,6 @@
           <button class="partial" onclick="acceptPartialCookies()">Accept Partial</button>
       </p>
   </div>
-
   <!-- Content -->
   <h1>Welcome to My Website!</h1>
   <p id="userName">User: Not logged in</p>
@@ -151,7 +156,7 @@
     <!-- Default Emoji will be inserted by JavaScript -->
 </div>
 <share-the-gospel class="share-the-good-news" id="the-word-of-God">
-  <video class="the-platform" id="the-message" src="../../../../../Videos/10000000_860336725717830_4277613819321301258_n.mp4" controls></video> <!--The video-->
+  <video class="the-platform" id="the-message" src="" controls></video> <!--The video-->
   <div class="the-information">
   <h1 class="title-of-the-gospel"></h1> <!--Title of video-->
   <description id="message-mail" class="description-of-the-message"></description> <!--Description of video-->
@@ -162,6 +167,71 @@
     <i class="fas fa-times" id="close-toggle"></i>
   </div>
 </share-the-gospel>
+<!-- Popup dialog for language selection -->
+<div id="language-popup" class="language-popup">
+  <ul id="language-list">
+      <li class="language-item" data-lang="en">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" alt="English Flag" class="language-flag"> English
+      </li>
+      <li class="language-item" data-lang="es">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1280px-Flag_of_Spain.svg.png" alt="Spanish Flag" class="language-flag"> Spanish
+      </li>
+      <li class="language-item" data-lang="ru">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1280px-Flag_of_Russia.svg.png" alt="Russian Flag" class="language-flag"> Russian
+      </li>
+      <li class="language-item" data-lang="sv">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/1280px-Flag_of_Sweden.svg.png" alt="Swedish Flag" class="language-flag"> Swedish
+      </li>
+      <li class="language-item" data-lang="pl">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/1280px-Flag_of_Poland.svg.png" alt="Poland Flag" class="language-flag"> Polish
+      </li>
+  </ul>
+</div>
+<!-- Chatbot Popup -->
+<div id="chatbot-popup" class="chatbot-popup">
+  <div class="chatbot-header">
+      <div class="chatbot-title">
+          <img src="../app/assets/icons/blackblazer.png" alt="Website Logo" class="chatbot-logo">BlackBlazent
+      </div>
+      <div class="chatbot-controls">
+          <i class="fas fa-minus minimize-btn"></i>
+          <i class="fas fa-times close-btn"></i>
+      </div>
+  </div>
+  <div class="chatbot-body">
+      <div id="chat-content" class="chat-content"></div>
+      <div id="user-input" class="user-input"><p class="user-prompted-text" id="textarea" data-placeholder="Ask about us..." contenteditable="true"><br class="ProseMirror-trailingBreak"></p></div>
+      <button id="send-btn" class="send-btn"><i class="fas fa-arrow-up" id="send-icon"></i></button>
+  </div>
+</div>
+<!-- Terminal Dialog -->
+<div id="terminal">
+  <!-- Terminal Header with controls -->
+  <div id="terminal-header">
+      <span>Terminal</span>
+      <div class="window-controls">
+          <i id="minimize-btn" class="fas fa-window-minimize"></i>
+          <i id="maximize-btn" class="fas fa-window-maximize"></i>
+          <i id="close-btn" class="fas fa-times"></i>
+      </div>
+  </div>
+  <!-- Terminal Content -->
+  <div id="terminal-content">
+    <div class="console-agent-prompt">
+      <div class="enumarator">$BlackBlazent:</div><div class="command-text-space" contenteditable="true"></div>
+    </div>
+  </div>
+
+  <!-- Resizable handles -->
+  <div class="resize-handle tl"></div>
+  <div class="resize-handle tr"></div>
+  <div class="resize-handle bl"></div>
+  <div class="resize-handle br"></div>
+  <div class="resize-handle top"></div>
+  <div class="resize-handle bottom"></div>
+  <div class="resize-handle left"></div>
+  <div class="resize-handle right"></div>
+</div>
         </body>
         <script>
           function launchDownload() {

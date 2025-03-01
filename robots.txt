@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /app/
+Disallow: /private/
+Disallow: /dev/
+Disallow: /src/
+Allow: /src/
+Allow: /app/assets/
+
+Sitemap: https://www.blackblazent.com/sitemapindex.xml

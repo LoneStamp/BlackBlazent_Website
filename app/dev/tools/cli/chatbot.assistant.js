@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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' // Replace with your actual OpenAI API key
+                'Authorization': 'Bearer your_api_key' // Replace with your actual OpenAI API key
             },
             body: JSON.stringify({
                 model: "text-davinci-003", // Or your model of choice

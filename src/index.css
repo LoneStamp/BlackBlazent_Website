@@ -77,7 +77,14 @@ body {
     display: flex;
     gap: 10px;
   }
-
+  #DownloadAppNow-iz {
+    background-color: #ffffff40;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  #DownloadAppNow-iz:hover {
+    background-color: #ffffff6a;
+  }
   .header-right .fa-globe {
     font-size: 1.5rem;
   }

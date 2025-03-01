@@ -173,7 +173,7 @@ const data = {
         "Nick_Vujicic": "UCm71Z36uSgQtoNmnYjelvNA",
         "Vladimir_Savchuk": "UC1DuOQg0-nr99t17Ca8Hlag"
     },
-    "YouTube": "AIzaSyBGuZsZyra_svzooWjwUl1oN2_M-dBaroU"
+    "YouTube": "your_api_key"
 };
 
 // Variables to track video state
